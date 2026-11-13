@@ -10,43 +10,42 @@ const shuffle = (arr) => {
 let questions = shuffle(agencies.slice(0, 5));
 let currIndex = 0;
 let score = 0;
-let status = "start";
+let status = "answering";
 let isAnswered = false;
-console.log(questions[currIndex]);
-const input = document.querySelector("input");
-const getQuestion = () => currIndex++;
+const getQuestion = () => {
+    currIndex++;
+    if (currIndex >= questions.length) {
+        status = "end";
+        return;
+    }
+    status = "answering";
+};
 const acroSpan = document.querySelector(".acronym");
 const resSpan = document.querySelector(".result");
-const name = document.querySelector(".name");
+const nameSpan = document.querySelector(".name");
+const output = document.querySelector(".output");
+const scoreSpan = document.querySelector(".score");
 const renderUI = () => {
-    acroSpan.textContent = `${questions[currIndex].acronym}`;
-    if (status !== "start") {
-        name.textContent = `Answer: ${questions[currIndex].fullName}`;
-        name?.classList.add("show");
-        name?.classList.remove("hide");
-    }
-    else {
-        name?.classList.add("hide");
-        name?.classList.remove("show");
-        resSpan?.classList.remove("r", "g");
-        name.textContent = "";
+    if (status === "end") {
+        nameSpan.textContent = `Finished with score: ${score} / ${questions.length}`;
         resSpan.textContent = "";
+        return;
     }
-    if (status === "correct") {
-        resSpan.textContent = "Correct!";
-        resSpan.classList.add("g");
-    }
-    else if (status === "wrong") {
-        resSpan.textContent = "Wrong";
-        resSpan.classList.add("r");
-    }
+    scoreSpan.textContent = `${score} / ${questions.length}`;
+    acroSpan.textContent = `${questions[currIndex].acronym}`;
+    output?.classList.toggle("hide", status === "answering");
+    status === "correct" ? resSpan.textContent = "Correct!" : resSpan.textContent = "Wrong!";
+    nameSpan.textContent = `Answer: ${questions[currIndex].fullName}`;
+    resSpan?.classList.toggle("g", status === "correct");
+    resSpan?.classList.toggle("r", status === "wrong");
 };
+const input = document.querySelector("input");
+input?.focus();
 input?.addEventListener("keydown", e => {
     if (e.key === "Enter") {
         if (!isAnswered) {
             e.preventDefault();
             const inputVal = input?.value.toLowerCase().trim();
-            console.log(`Input: ${inputVal} question: ${questions[currIndex].fullName}`);
             if (inputVal === questions[currIndex].fullName.toLowerCase()) {
                 status = "correct";
                 score++;
@@ -61,9 +60,14 @@ input?.addEventListener("keydown", e => {
             getQuestion();
             input.value = "";
             input.focus();
-            status = "start";
+            if (status === "end") {
+                input.disabled = true;
+                status = "end";
+            }
+            else {
+                isAnswered = false;
+            }
             renderUI();
-            isAnswered = false;
         }
     }
 });

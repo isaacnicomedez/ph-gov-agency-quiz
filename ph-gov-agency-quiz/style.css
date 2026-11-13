@@ -62,18 +62,12 @@ main {
 }
 .result {
     font-size: 1.4em;
-    color: transparent;
 }
 .g {
     color: green;
 }
 .r {
     color: red;
-}
-.name {
-    color: transparent;
-}.show {
-    color: black;
 }.hide {
     color: transparent;
 }
