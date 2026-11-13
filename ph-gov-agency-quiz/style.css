@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.wrapper {
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.gui-text {
+    font-size: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.agency {
+    padding: 8rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+.agency span {
+    font-size: 3em;
+}
+
+.input {
+    width: 100%;
+    max-width: 20rem;
+}
+.input input {
+    padding: 0.6em 0.6rem;
+    width: 100%;
+}
+
+.output {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+}
+.result {
+    font-size: 1.4em;
+}
+
