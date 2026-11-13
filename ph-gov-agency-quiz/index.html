@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PH Government Agency Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="wrapper">
-        <div class="nav">
-            <div class="timer">
-                <span class="gui-text">00:30s</span>
+        <div class="menu">
+            <div class="header">
+                <h1>PH Government Agency Quiz</h1>
+                <span>Trivia Knowledge Check :></span>
             </div>
-            <div class="score"><span class="gui-text">3/15</span></div>
+            <div class="nav-links">
+                <button class="easy">Easy</button>
+                <span class="high">Highscore: 15 / 20</span>
+                <button class="medium">Medium</button>
+                <span class="high">Highscore: 15 / 20</span>
+                <button class="hard">Hard</button>
+                <span class="high">Highscore: 15 / 20</span>
+            </div>
         </div>
-        <main>
-            <div class="agency"><span class="acronym">DepEd</span></div>
-            <div class="input">
-                <input type="text" placeholder="What does it stands for?">
+        <div class="game hideEl">
+            <div class="nav">
+                <div class="back">
+                    <span class="back-btn"><</span>
+                </div>
+                <div class="gui">
+                    <span class="timer">00:30s</span>
+                    <span class="score">3/15</span>
+                </div>
             </div>
-            <div class="output">
-                <span class="result"></span>
-                <span class="name"></span>
-            </div>
-        </main>
+            <main>
+                <div class="agency"><span class="acronym">DepEd</span></div>
+                <div class="input">
+                    <input type="text" placeholder="What does it stands for?">
+                </div>
+                <div class="output">
+                    <span class="result"></span>
+                    <span class="name"></span>
+                </div>
+            </main>
+        </div>
     </div>
-
     <script type="module" src="dist/script.js"></script>
 </body>
+
 </html>
