@@ -1,4 +1,4 @@
-interface Agency {
+export interface Agency {
     acronym: string;
     fullName: string;
 }
