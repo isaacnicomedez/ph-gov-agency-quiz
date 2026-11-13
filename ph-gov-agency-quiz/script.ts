@@ -10,7 +10,9 @@ const shuffle = (arr: Agency[]): Agency[] => {
     return newArr;
 }
 
-let questions = shuffle(agencies.slice());
+console.log(agencies.length);
+
+let questions: Agency[] = [];
 let currIndex = 0;
 let score = 0;
 let status = "answering";
@@ -24,6 +26,28 @@ const getQuestion = () => {
     }
     status = "answering";
 };
+
+const filterResetQuestions = () => {
+    if (difficulty === "easy") {
+        questions = agencies.filter(a => a.difficulty === "easy");
+    } else if (difficulty === "medium") {
+        questions = agencies.filter(a => a.difficulty === "medium");
+    } else {
+        questions = agencies.filter(a => a.difficulty === "hard");
+    }
+    questions = shuffle(questions);
+
+    currIndex =  0;
+    score = 0;
+    status = "answering";
+    isAnswered = false;
+
+    if (input) {
+        input.value = "";
+        input.disabled = false;
+        input.focus();
+    }
+}
 
 const acroSpan = document.querySelector(".acronym");
 const resSpan = document.querySelector(".result");
@@ -93,14 +117,14 @@ buttons.forEach(btn => {
         difficulty = btn.textContent.toLowerCase().trim();
         menu?.classList.add("hideEl");
         game?.classList.remove("hideEl");
+        filterResetQuestions();
+        renderUI();
     });
 })
 
 back?.addEventListener('click', e => {
     game?.classList.add("hideEl");
     menu?.classList.remove("hideEl");
-    currIndex =  0;
-    score = 0;
 });
 
 renderUI();
