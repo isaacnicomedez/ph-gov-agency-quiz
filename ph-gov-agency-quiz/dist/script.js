@@ -8,13 +8,10 @@ const shuffle = (arr) => {
     return newArr;
 };
 let questions = shuffle(agencies);
-let currIndex = 0;
-let currQuestion = questions[currIndex];
 const input = document.querySelector("input");
 input?.addEventListener("keydown", e => {
     if (e.key === "Enter") {
         e.preventDefault();
+        const inputVal = input?.value.trim();
     }
-    const inputVal = input?.value;
-    console.log(inputVal);
 });

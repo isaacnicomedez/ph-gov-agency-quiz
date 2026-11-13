@@ -12,3 +12,12 @@ const shuffle = (arr: Agency[]): Agency[] => {
 
 let questions = shuffle(agencies);
 
+const input = document.querySelector<HTMLInputElement>("input");
+
+input?.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        const inputVal = input?.value.trim();
+    }
+});
+
