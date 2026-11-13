@@ -9,6 +9,7 @@ const shuffle = (arr) => {
 };
 let questions = shuffle(agencies.slice(0, 5));
 let currIndex = 0;
+let score = 0;
 console.log(questions[currIndex]);
 const input = document.querySelector("input");
 const getQuestion = () => currIndex++;
@@ -17,6 +18,17 @@ input?.addEventListener("keydown", e => {
         e.preventDefault();
         const inputVal = input?.value.trim();
         getQuestion();
-        console.log(questions[currIndex]);
+        if (inputVal === questions[currIndex].fullName) {
+            renderUI(true);
+            score++;
+        }
+        else {
+            renderUI(false);
+        }
+        input.value = "";
+        input.focus();
     }
 });
+const acroSpan = document.querySelector(".acronym");
+const renderUI = (res) => {
+};
