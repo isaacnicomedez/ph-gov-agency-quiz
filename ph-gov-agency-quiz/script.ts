@@ -10,7 +10,7 @@ const shuffle = (arr: Agency[]): Agency[] => {
     return newArr;
 }
 
-let questions = shuffle(agencies.slice(0, 5));
+let questions = shuffle(agencies.slice());
 let currIndex = 0;
 let score = 0;
 let status = "answering";
@@ -80,6 +80,27 @@ input?.addEventListener("keydown", e => {
             renderUI();
         }
     }
+});
+
+let difficulty = "";
+const buttons = document.querySelectorAll(".nav-links button");
+const menu = document.querySelector(".menu");
+const game = document.querySelector(".game");
+const back = document.querySelector(".back-btn");
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', e => {
+        difficulty = btn.textContent.toLowerCase().trim();
+        menu?.classList.add("hideEl");
+        game?.classList.remove("hideEl");
+    });
+})
+
+back?.addEventListener('click', e => {
+    game?.classList.add("hideEl");
+    menu?.classList.remove("hideEl");
+    currIndex =  0;
+    score = 0;
 });
 
 renderUI();
