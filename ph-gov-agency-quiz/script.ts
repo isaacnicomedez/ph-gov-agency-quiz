@@ -10,14 +10,19 @@ const shuffle = (arr: Agency[]): Agency[] => {
     return newArr;
 }
 
-let questions = shuffle(agencies);
+let questions = shuffle(agencies.slice(0, 5));
+let currIndex = 0;
+console.log(questions[currIndex]);
 
 const input = document.querySelector<HTMLInputElement>("input");
+const getQuestion = () => currIndex++;
 
 input?.addEventListener("keydown", e => {
     if (e.key === "Enter") {
         e.preventDefault();
         const inputVal = input?.value.trim();
+        getQuestion();
+        console.log(questions[currIndex]);
     }
 });
 
