@@ -5,6 +5,17 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+:root {
+    --btn-coral: #f45b5b;
+    --btn-coral-h: #ff6e6e;
+    --btn-yellow: #ffd147;
+    --btn-yellow-h: #ffda66;
+    --btn-teal: #36b3b8;
+    --btn-teal-h: #4bc4c8;
+
+    --btn-outline: #1a1128;
+}
+
 body {
     background-color: whitesmoke;
 }
@@ -14,6 +25,27 @@ body {
     height: 100vh;
     margin: auto;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 758px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+    }
+    .header {
+        padding: 32px 20px 20px 20px !important;
+    }
+    h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+    .nav-links a {
+        width: 180px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
 }
 
 .nav {
@@ -22,7 +54,10 @@ body {
     padding: 1rem 2rem;
 }
 
-.gui-text {
+.gui {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
     font-size: 1em;
 }
 
@@ -70,5 +105,71 @@ main {
     color: red;
 }.hide {
     color: transparent;
+}.hideEl {
+    display: none;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    justify-content: center;
+    padding: 64px 32px;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 1.6em;
+}
+.header span {
+    font-family: "arial narrow";
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+button {
+    text-decoration: none;
+    color: var(--btn-outline);
+    background-color: var(--btn-coral);
+    border: 2px solid var(--btn-outline);
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 var(--btn-outline);
+    width: 10em;
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 var(--btn-outline);
+}
+
+.easy {
+    background-color: var(--btn-teal);
+}.easy:hover {
+    background-color: var(--btn-teal-h);
+}
+
+.medium {
+    background-color: var(--btn-yellow);
+}.medium:hover {
+    background-color: var(--btn-yellow-h);
+}
+
+.hard {
+    background-color: var(--btn-coral);
+}.hard:hover {
+    background-color: var(--btn-coral-h);
+}
+
+.high {
+    font-size: 0.7em;
+    margin-bottom: 2rem;
+}
+
 
