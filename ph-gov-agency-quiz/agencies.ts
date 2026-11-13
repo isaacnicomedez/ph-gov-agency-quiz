@@ -249,5 +249,3 @@ export const agencies: Agency[] = [
         acronym: "NCIP", fullName: "National Commission on Indigenous Peoples"
     }
 ];
-
-console.log(agencies.length);
