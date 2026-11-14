@@ -41,10 +41,22 @@ body {
         font-size: 1.75rem;
         line-height: 1.2;
     }
+    .nav {
+        padding: 1rem 1rem !important;
+    }
+    .nav-links {
+        flex-direction: column !important;
+    }
     .nav-links a {
         width: 180px;
         padding: 10px 16px;
         font-size: 0.95rem;
+    }
+    input {
+        font-size: 0.7em;
+    }
+    .clue span {
+        font-size: 0.7em !important;
     }
 }
 
@@ -69,11 +81,13 @@ main {
 }
 
 .agency {
-    padding: 8rem 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 10px;
 }
-.agency span {
+.agency .acronym {
     font-size: 3em;
     text-align: center;
 }
@@ -85,18 +99,6 @@ main {
 .input input {
     padding: 0.6em 0.6rem;
     width: 100%;
-}
-
-.output {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6em;
-}
-.result {
-    font-size: 1.4em;
 }
 .g {
     color: green;
@@ -126,10 +128,18 @@ h1 {
 
 .nav-links {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 2rem 2rem;
+    gap: 2.8rem;
+}
+.links {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    gap: 8px;
 }
 button {
     text-decoration: none;
@@ -169,7 +179,36 @@ button:active {
 
 .high {
     font-size: 0.7em;
-    margin-bottom: 2rem;
+}
+
+.name {
+    text-align: center;
+}
+.clue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.clue span {
+    font-size: 0.8em;
+}
+
+.question {
+    background-color: #A0A0A0;
+    border-radius: 20px;
+}
+.correct {
+    background-color: green;
+    border-radius: 20px;
+}
+.wrong  {
+    background-color: var(--btn-coral);
+    border-radius: 20px;
+}
+
+.back-btn {
+    padding: 10px;
 }
 
 
