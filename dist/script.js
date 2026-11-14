@@ -43,23 +43,28 @@ const filterResetQuestions = () => {
     }
 };
 const acroSpan = document.querySelector(".acronym");
-const resSpan = document.querySelector(".result");
 const nameSpan = document.querySelector(".name");
 const output = document.querySelector(".output");
 const scoreSpan = document.querySelector(".score");
+const descSpan = document.querySelector(".desc");
+const check = document.querySelector(".correct");
+const cross = document.querySelector(".wrong");
+const question = document.querySelector(".question");
 const renderUI = () => {
     if (status === "end") {
         nameSpan.textContent = `Finished with score: ${score} / ${questions.length}`;
-        resSpan.textContent = "";
         return;
     }
     scoreSpan.textContent = `${score} / ${questions.length}`;
     acroSpan.textContent = `${questions[currIndex].acronym}`;
+    descSpan.textContent = `${questions[currIndex].description}`;
     output?.classList.toggle("hide", status === "answering");
-    status === "correct" ? resSpan.textContent = "Correct!" : resSpan.textContent = "Wrong!";
-    nameSpan.textContent = `Answer: ${questions[currIndex].fullName}`;
-    resSpan?.classList.toggle("g", status === "correct");
-    resSpan?.classList.toggle("r", status === "wrong");
+    nameSpan.textContent = `${questions[currIndex].fullName}`;
+    descSpan?.classList.toggle("hideEl", status !== "answering");
+    question?.classList.toggle("hideEl", status !== "answering");
+    nameSpan?.classList.toggle("hideEl", status === "answering");
+    check?.classList.toggle("hideEl", status !== "correct");
+    cross?.classList.toggle("hideEl", status !== "wrong");
 };
 const input = document.querySelector("input");
 input?.focus();
@@ -104,6 +109,7 @@ buttons.forEach(btn => {
         menu?.classList.add("hideEl");
         game?.classList.remove("hideEl");
         filterResetQuestions();
+        console.log(questions[currIndex].acronym);
         renderUI();
     });
 });
@@ -111,4 +117,3 @@ back?.addEventListener('click', e => {
     game?.classList.add("hideEl");
     menu?.classList.remove("hideEl");
 });
-renderUI();
