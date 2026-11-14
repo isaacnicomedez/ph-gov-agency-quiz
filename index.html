@@ -16,18 +16,38 @@
                 <span>Trivia Knowledge Check :></span>
             </div>
             <div class="nav-links">
-                <button class="easy">Easy</button>
-                <span class="high">Highscore: 15 / 20</span>
-                <button class="medium">Medium</button>
-                <span class="high">Highscore: 15 / 20</span>
-                <button class="hard">Hard</button>
-                <span class="high">Highscore: 15 / 20</span>
+                <div>
+                    <button class="easy">Easy</button>
+                    <div class="links">
+                        <span class="high">Highscore: 15 / 20</span>
+                        <span class="high">Best time: 01:28s</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="medium">Medium</button>
+                    <div class="links">
+                        <span class="high">Highscore: 15 / 20</span>
+                        <span class="high">Best time: 01:28s</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="hard">Hard</button>
+                    <div class="links">
+                        <span class="high">Highscore: 15 / 20</span>
+                        <span class="high">Best time: 01:28s</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="game hideEl">
             <div class="nav">
                 <div class="back">
-                    <span class="back-btn"><</span>
+                    <span class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px"
+                            fill="#333333">
+                            <path d="M7.83,13l5.6,5.6L12,20L4,12l8-8l1.43,1.4L7.83,11H20v2H7.83Z" />
+                        </svg>
+                    </span>
                 </div>
                 <div class="gui">
                     <span class="timer">00:30s</span>
@@ -35,13 +55,29 @@
                 </div>
             </div>
             <main>
-                <div class="agency"><span class="acronym">DepEd</span></div>
+                <div class="agency">
+                    <span class="acronym"></span>
+                    <div class="clue">
+                        <svg class="question" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px"
+                            width="24px" fill="white">
+                            <path
+                                d="M10.6,16q0-2.03 0.36-2.91t1.54-1.94q1.03-0.9 1.56-1.56T14.6,8.07q0-1.02-0.69-1.7T12,5.7q-1.27,0-1.94,0.77T9.13,8.05L6.55,6.95q0.52-1.6 1.92-2.78T12,3q2.63,0 4.04,1.46q1.41,1.46 1.41,3.51q0,1.25-0.54,2.14t-1.69,2.01Q14,13.3 13.74,13.91T13.48,16H10.6ZM12,22q-0.82,0-1.41-0.59T10,20t0.59-1.41T12,18t1.41,0.59Q14,19.18 14,20t-0.59,1.41T12,22Z" />
+                        </svg>
+                        <svg class="correct" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px"
+                            width="24px" fill="white">
+                            <path d="M9.55,18l-5.7-5.7l1.43-1.42l4.28,4.28l9.18-9.18L20.15,7.4L9.55,18Z" />
+                        </svg>
+                        <svg class="wrong" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px"
+                            width="24px" fill="white">
+                            <path
+                                d="M8.4,17L7,15.6L10.6,12L7,8.42l1.4-1.4l3.6,3.6l3.58-3.6l1.4,1.4L13.38,12l3.6,3.6L15.58,17L12,13.4L8.4,17Z" />
+                        </svg>
+                        <span class="desc"></span>
+                        <span class="name"></span>
+                    </div>
+                </div>
                 <div class="input">
                     <input type="text" placeholder="What does it stands for?">
-                </div>
-                <div class="output">
-                    <span class="result"></span>
-                    <span class="name"></span>
                 </div>
             </main>
         </div>
